@@ -73,7 +73,7 @@ def main():
     criterion = nn.MSELoss()
 
     print("\n--- Training Neural Frameworks ---")
-    for epoch in range(1, 4):
+    for epoch in range(1, 10):
         snn_model.train()
         total_loss = 0
         for bx, by in train_loader:
@@ -95,7 +95,7 @@ def main():
             
             total_loss += loss.item()
             
-        print(f"Epoch [{epoch}/3] | Loss: {total_loss/len(train_loader):.4f}")
+        print(f"Epoch [{epoch}/10] | Loss: {total_loss/len(train_loader):.4f}")
         gc.collect()
 
     print("\n--- Training Sub-Sampled XGBoost Baseline ---")
